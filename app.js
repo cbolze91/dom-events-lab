@@ -100,3 +100,15 @@ function calculate(a, b, op) {
       return b;
   }
 }
+
+
+function clearAll() {
+  currentInput = "";
+  previousValue = null;
+  operator = null;
+  updateDisplay();
+}
+
+
+// Set the initial display
+updateDisplay();
