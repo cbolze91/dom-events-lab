@@ -73,3 +73,14 @@ function handleOperator(value) {
   operator = value;
   updateDisplay();
 }
+
+
+function handleEquals() {
+  if (previousValue !== null && operator !== null && currentInput !== "") {
+    const result = calculate(previousValue, Number(currentInput), operator);
+    previousValue = result;
+    currentInput = "";
+    operator = null;
+    updateDisplay();
+  }
+}
