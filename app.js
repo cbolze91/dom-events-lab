@@ -35,3 +35,22 @@ buttons.forEach((button) => {
 
 /*-------------------------------- Functions --------------------------------*/
 
+function updateDisplay() {
+  if (currentInput !== "") {
+    displayEl.innerText = currentInput;
+  } else if (previousValue !== null) {
+    displayEl.innerText = previousValue;
+  } else {
+    displayEl.innerText = "0";
+  }
+}
+
+
+function handleNumber(value) {
+  if (currentInput === "0") {
+    currentInput = value;
+  } else {
+    currentInput += value;
+  }
+  updateDisplay();
+}
