@@ -54,3 +54,22 @@ function handleNumber(value) {
   }
   updateDisplay();
 }
+
+
+function handleOperator(value) {
+  if (value === "C") {
+    clearAll();
+    return;
+  }
+
+  if (previousValue === null && currentInput !== "") {
+    previousValue = Number(currentInput);
+    currentInput = "";
+  } else if (previousValue !== null && currentInput !== "") {
+    previousValue = calculate(previousValue, Number(currentInput), operator);
+    currentInput = "";
+  }
+
+  operator = value;
+  updateDisplay();
+}
